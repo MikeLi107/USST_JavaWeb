@@ -1,0 +1,226 @@
+/* =========================================
+   1. 全局设置 (Global Reset)
+   ========================================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9; /* 浅灰背景，护眼 */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    /* 关键：不使用 flex 垂直居中，防止内容溢出屏幕无法滚动 */
+}
+
+/* 链接通用样式 */
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* =========================================
+   2. 主容器 (Container)
+   ========================================= */
+.container {
+    background-color: #ffffff;
+    width: 90%;           /* 适配移动端 */
+    max-width: 900px;     /*在大屏上限制最大宽度 */
+    margin: 40px auto;    /* 上下留白，左右自动居中 */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* 柔和投影 */
+}
+
+/* =========================================
+   3. 标题与文字 (Typography)
+   ========================================= */
+h1 {
+    font-size: 26px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h2 {
+    text-align: center;
+    color: #34495e;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 25px 0 15px 0;
+    padding-left: 10px;
+    border-left: 5px solid #2ecc71; /* 左侧绿色装饰条 */
+    color: #2c3e50;
+}
+
+/* 分割线 */
+hr {
+    border: 0;
+    height: 1px;
+    background: #eaeaea;
+    margin: 20px 0;
+}
+
+/* =========================================
+   4. 表单元素 (Forms & Inputs)
+   ========================================= */
+/* 通用输入框 */
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #3498db;
+}
+
+/* 通用按钮 */
+button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* --- 注册页面的特殊样式 --- */
+/* 如果是注册页面的垂直表单，让输入框占满整行 */
+form:not(.inline-form) input {
+    width: 100%;
+    box-sizing: border-box; /* 防止 padding 撑破宽度 */
+    margin-bottom: 15px;
+}
+form:not(.inline-form) label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* --- 列表页面的行内表单 (Inline Form) --- */
+/* 让搜索栏和发布栏横向排列，节省空间 */
+.inline-form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* 屏幕小自动换行 */
+    gap: 12px;       /* 元素间距 */
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+}
+
+.inline-form label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+/* 让发布栏的输入框自动伸缩 */
+.inline-form input[name="title"],
+.inline-form input[name="description"] {
+    flex-grow: 1; /* 自动占满剩余空间 */
+    min-width: 120px;
+}
+
+/* =========================================
+   5. 表格样式 (Tables)
+   ========================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+th {
+    background-color: #f7f9fc;
+    color: #2c3e50;
+    font-weight: 600;
+    border-top: 1px solid #eee;
+}
+
+tr:hover {
+    background-color: #fdfdfd;
+}
+
+/* =========================================
+   6. 首页导航卡片 (Index Navigation Cards)
+   ========================================= */
+ul.nav-list {
+    list-style: none; /* 去掉黑点 */
+    padding: 0;
+    margin: 50px 0;   /* 增加上下间距 */
+
+    display: flex;            /* 弹性布局 */
+    justify-content: center;  /* 居中对齐 */
+    gap: 40px;                /* 卡片间距 */
+    flex-wrap: wrap;          /* 允许换行 */
+}
+
+ul.nav-list li {
+    margin: 0;
+}
+
+/* 大卡片样式 */
+ul.nav-list li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 240px;            /* 卡片宽度 */
+    height: 160px;           /* 卡片高度 */
+
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05); /* 静态投影 */
+
+    color: #2c3e50;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+/* 卡片悬停效果：上浮 + 变色 */
+ul.nav-list li a:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(46, 204, 113, 0.2);
+    border-color: #2ecc71;
+    color: #2ecc71;
+    background-color: #fafffc;
+}

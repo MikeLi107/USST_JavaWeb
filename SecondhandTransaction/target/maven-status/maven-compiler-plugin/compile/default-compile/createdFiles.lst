@@ -1,0 +1,10 @@
+DAO\UserDao.class
+DAO\StuffDao.class
+Model\User.class
+Service\UserService.class
+Controller\StuffServlet.class
+Controller\RegisterServlet.class
+Service\SecureTool.class
+Service\StuffService.class
+DAO\DBtool.class
+Model\Stuff.class
